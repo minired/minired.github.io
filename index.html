@@ -1,1 +1,96 @@
-Hello minired
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hi</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <style type="text/css">
+        html,body {margin:0;padding:0;font-size:20px;color:#fff;text-align:center;}
+        .bgimg1 {
+            background-image: url('images/primera1pg.jpg');
+            background-repeat: no-repeat;
+
+        }
+        .bgimg2 {
+            background-image: url('images/primera2pg.jpg'); background-size: cover;
+            max-width: 100%;
+
+        }
+        .bgimg3 {
+            background-image: url('images/primera3pg.jpg'); background-size: cover;
+            max-width: 100%;
+        }
+        .bgimg4 {
+            background-image: url('images/primera4pg.jpg');
+            max-width: 100%;
+            background-repeat: no-repeat;
+            overflow-x:hidden;
+        }
+        #logo {position: fixed; z-index: 1000; left: 0px; top: 0px;}
+    </style>
+    <script type="text/javascript">
+        (function($){
+            $.aniPage=function(e){
+                if(e.originalEvent.wheelDelta > 0){
+                        $("body, html").animate({
+                            scrollTop:$(window).scrollTop()-$(window).height()
+                        }, 800, function () {
+                            $.aniOk = 0;
+                        });
+                    }
+                else{
+                    $("body, html").animate({
+                        scrollTop:$(window).scrollTop()+$(window).height()
+                    },800,function(){
+                        $.aniOk = 0;
+                    });
+                }
+            };
+        })(jQuery);
+        $(function(){
+            $(".contInner").width(1900)
+            $(".contInner").height(1020)//height($(window).height());
+            $.aniOk=0;
+            $(window).scrollTop(0);
+        });
+        $(document).on("mousewheel",function(e){
+            e.preventDefault();
+            if($.aniOk == 0){
+                $.aniPage(e);
+                $.aniOk = 1;
+            }
+        });
+        $(function(){
+            $(".contInner2").width(1900)
+            $(".contInner2").height(1129)//height($(window).height());
+            $.aniOk=0;
+            $(window).scrollTop(0);
+        });
+    </script>
+</head>
+<body>
+
+
+    <div class="bgimg1" >
+        <div class="contInner" >
+            <div id="logo">
+                <img src="images/label.gif" alt="thus">
+            </div>
+
+            </div>
+    </div>
+    <div class="bgimg2" >
+        <div class="contInner" >
+        </div>
+    </div>
+    <div class="bgimg3" >
+        <div class="contInner" >
+        </div>
+    </div>
+    <div class="bgimg4" >
+        <div class="contInner2" >
+        </div>
+    </div>
+
+</body>
+</html>
