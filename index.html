@@ -40,10 +40,11 @@
                     }
                 else{
                     $("body, html").animate({
-                        scrollTop:$(window).scrollTop()+$(window).height()
+                       scrollTop:$(window).scrollTop()+$(window).height()
                     },800,function(){
                         $.aniOk = 0;
-                    });
+                    })
+
                 }
             };
         })(jQuery);
@@ -54,11 +55,11 @@
             $(window).scrollTop(0);
         });
         $(document).on("mousewheel",function(e){
-            e.preventDefault();
-            if($.aniOk == 0){
-                $.aniPage(e);
-                $.aniOk = 1;
-            }
+          //  e.preventDefault();
+           // if($.aniOk == 0){
+             //   $.aniPage(e);
+              //  $.aniOk = 1;
+       // }
         });
         $(function(){
             $(".contInner2").width(1900)
