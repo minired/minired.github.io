@@ -266,18 +266,20 @@
             var elem3 = $("#bg3");
             var elem4 = $("#bg4");
             var index = 1;
-            if ($(window).scrollTop() < elem1.outerHeight()) {
-                index = 1;
-            }
-            if ($(window).scrollTop() >= elem1.outerHeight()) {
-                index = 2;
-            }
-            if ($(window).scrollTop() >= elem1.outerHeight() + elem2.outerHeight()) {
-                index = 3;
-            }
-            if ($(window).scrollTop() >= elem1.outerHeight() + elem2.outerHeight() + elem3.outerHeight()) {
-                index = 4;
-            }
+
+                if ($(window).scrollTop() < elem1.outerHeight()) {
+                    index = 1;
+                }
+                if ($(window).scrollTop() >= elem1.outerHeight() - (elem1.outerHeight()/2) ) {
+                    index = 2;
+                }
+                if ($(window).scrollTop() >= elem1.outerHeight() + elem2.outerHeight() - (elem2.outerHeight()/2)) {
+                    index = 3;
+                }
+                if ($(window).scrollTop() >= elem1.outerHeight() + elem2.outerHeight() + elem3.outerHeight() - (elem3.outerHeight()/2)) {
+                    index = 4;
+                }
+
 
             $("#ac1").find("img").attr("src",$("#ac1").find("img").attr("src").replace("_on.png" , "_off.png"));
             $("#ac2").find("img").attr("src",$("#ac2").find("img").attr("src").replace("_on.png" , "_off.png"));
