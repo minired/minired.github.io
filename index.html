@@ -9,24 +9,36 @@
         .bgimg1 {
             background-image: url('images/primera1pg.jpg');
             background-repeat: no-repeat;
+            background-position: center;
+            overflow-x:hidden;
 
         }
         .bgimg2 {
-            background-image: url('images/primera2pg.jpg'); background-size: cover;
-            max-width: 100%;
+            background-image: url('images/primera2pg.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow-x:hidden;
 
         }
         .bgimg3 {
-            background-image: url('images/primera3pg.jpg'); background-size: cover;
-            max-width: 100%;
+            background-image: url('images/primera3pg.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow-x:hidden;
         }
         .bgimg4 {
             background-image: url('images/primera4pg.jpg');
-            max-width: 100%;
             background-repeat: no-repeat;
+            background-position: center;
             overflow-x:hidden;
         }
         #logo {position: fixed; z-index: 1000; left: 0px; top: 0px;}
+        #gnb {position: fixed; z-index: 1000; left: -1000px; top:20px;}
+        #gnbback {position: fixed; z-index: 500; left: -1000px; top:20px;}
+        #gnb li {margin-bottom: 10px;}
+
+        #bottombtn1 {position: relative; z-index: 1000; left: 0px; top:0px;}
+        #bottombtn2 {position: relative; z-index: 1000; left: 0px; top:0px;}
     </style>
     <script type="text/javascript">
         (function($){
@@ -67,29 +79,95 @@
             $.aniOk=0;
             $(window).scrollTop(0);
         });
+
+
+
+
+        function gnb(n)
+        {
+            //window.scrollTo(0, 1500);
+
+            switch (n)
+            {
+                case 1:
+                    img1.style.visibility = "hidden"
+                    location.href="#bg1";
+                    break;
+                case 2:
+                    img2.style.visibility = "hidden"
+                    location.href="#bg2";
+                    break;
+                case 3:
+                    img3.style.visibility = "hidden"
+                    location.href="#bg3";
+                    break;
+                case 4:
+                    img4.style.visibility = "hidden"
+                    location.href="#bg4";
+                    break;
+            }
+        }
+
+        $(window).scroll(function() {
+            var elem1 = $("#bg1");
+            var elem2 = $("#bg2");
+            var elem3 = $("#bg3");
+            var elem4 = $("#bg4");
+            if ($(window).scrollTop() >= elem.outerHeight()) {
+                img2.style.visibility = "hidden"
+            }
+        });
+
     </script>
 </head>
 <body>
 
 
-    <div class="bgimg1" >
-        <div class="contInner" >
+
+<div class="bgimg1" >
+        <div class="contInner" , id = "bg1">
             <div id="logo">
                 <img src="images/label.gif" alt="thus">
             </div>
 
+            <div id="gnbback" style="left: 1600px; top: 100px;">
+                <a href="javascript:gnb(1);"><img src="images/navi_btn.png" alt="about"></a>
+            </div>
+            <div id="gnb" style=" left: 1600px;">
+                    <a href="javascript:gnb(1);"><img  id="img1" src="images/frog1.png" alt="about"></a><p></p>
+                    <a href="javascript:gnb(2);"><img  id="img2" src="images/frog2.png" alt="work"></a><p></p>
+                    <a href="javascript:gnb(3);"><img  id="img3" src="images/frog3.png" alt="contact"></a><p></p>
+                    <a href="javascript:gnb(4);"><img  id="img4" src="images/frog4.png" alt="contact"></a><p></p>
+            </div>
+
             </div>
     </div>
-    <div class="bgimg2" >
+    <div class="bgimg2", id = "bg2" >
+        <a name="#index2"></a>
         <div class="contInner" >
         </div>
     </div>
-    <div class="bgimg3" >
-        <div class="contInner" >
+    <div class="bgimg3", id = "bg3" >
+        <div class="contInner"  >
         </div>
     </div>
-    <div class="bgimg4" >
+    <div class="bgimg4" , id = "bg4" >
         <div class="contInner2" >
+            <div id="bottombtn1" style="left: -164px; top: 934px;">
+                <table style="width:100%">
+                    <tr>
+                        <td>Jill</td>
+                        <td><a href="javascript:gnb(1);"><img  id="img7" src="images/sche_btn.png" alt="about"></a></td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                        <td>94</td>
+                    </tr>
+                </table>
+
+            </div>
         </div>
     </div>
 
