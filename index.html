@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>primera</title>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
     <style type="text/css">
         html,body {margin:0;padding:0;font-size:20px;color:#fff;text-align:center;}
         .bgimg1 {
@@ -39,6 +40,27 @@
 
         #bottombtn1 {position: relative; z-index: 1000; left: 0px; top:0px;}
         #bottombtn2 {position: relative; z-index: 1000; left: 0px; top:0px;}
+
+        #fixAnchor li a{}
+        #ac0, #ac0 a{display:block;}
+        #ac0 a > img{position:relative;top:-16px;}
+        ul{
+            list-style:none;
+            padding-left:0px;
+        }
+        /* quick */
+        #fixAnchor { position: absolute; top: 50%; right: 20px; margin: -43px 0 0 0; z-index:100; _display:none;}
+        #fixAnchor.js_fixed { position: fixed; top: 40%; margin: -193px 0 0 0; z-index:100;}
+        #fixAnchor.js_fixed2 {position:fixed; top: 40%; margin: -193px 0 0 0; z-index:100;}
+
+
+
+        #fixAnchor ul {height:370px; padding-top:16px;}
+        #fixAnchor li {position:relative; text-align:right; height: 62px; font-size: 1px; margin-bottom:18px; }
+        #fixAnchor li a {position:absolute; top:0; right:0;}
+
+        #fixAnchor .topBtn {display:none;}
+        #fixAnchor.js_fixed .topBtn {display:block; position:fixed; bottom:20px; right:20px;}
     </style>
     <script type="text/javascript">
         (function($){
@@ -108,15 +130,190 @@
             }
         }
 
+
+
+
+        /* 상단 이벤트 제어 스크립트 */
+        $(document).ready(function() {
+                $('#fixAnchor').addClass('js_fixed2');
+        });
+
+
+        /* 스크롤 효과 스크립트 */
+
+        ({
+            init: function() {
+                var self = this;
+                $(function() {
+                    $("#ac5").find("img").css("margin-top", "-20px");
+                    self.fixAnchor();
+                });
+            },
+
+
+            fixAnchor: function() {
+                var win = window;
+                var windowHeight = $(win).height();
+                var fixedFlg = false;
+
+                $('#fixAnchor .ac a').hover(function() {
+                   //$(this).find("img").attr("src",$(this).find("img").attr("src").replace("_off.png" , "_on.png"));
+                }, function() {
+                   // $(this).find("img").attr("src",$(this).find("img").attr("src").replace("_on.png" , "_off.png"));
+                });
+
+                $('#ac1').click(function(){
+                    $("#ac1").find("img").attr("src",$("#ac1").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac2").find("img").attr("src",$("#ac2").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac3").find("img").attr("src",$("#ac3").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac4").find("img").attr("src",$("#ac4").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $(this).find("img").attr("src",$(this).find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $("#ac4").find("img").css("margin-right", "0px");
+
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm2.png" , "_btm1.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm3.png" , "_btm1.png"));
+                    return true;
+                });
+                $('#ac2').click(function(){
+                    $("#ac1").find("img").attr("src",$("#ac1").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac2").find("img").attr("src",$("#ac2").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac3").find("img").attr("src",$("#ac3").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac4").find("img").attr("src",$("#ac4").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $(this).find("img").attr("src",$(this).find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $("#ac4").find("img").css("margin-right", "0px");
+
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm1.png" , "_btm2.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm3.png" , "_btm2.png"));
+
+                    return true;
+                });
+                $('#ac3').click(function(){
+                    $("#ac1").find("img").attr("src",$("#ac1").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac2").find("img").attr("src",$("#ac2").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac3").find("img").attr("src",$("#ac3").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac4").find("img").attr("src",$("#ac4").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $(this).find("img").attr("src",$(this).find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $("#ac4").find("img").css("margin-right", "0px");
+
+
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm1.png" , "_btm3.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm2.png" , "_btm3.png"));
+
+                    return true;
+                });
+                $('#ac4').click(function(){
+                    $("#ac1").find("img").attr("src",$("#ac1").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac2").find("img").attr("src",$("#ac2").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac3").find("img").attr("src",$("#ac3").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $("#ac4").find("img").attr("src",$("#ac4").find("img").attr("src").replace("_on.png" , "_off.png"));
+                    $(this).find("img").attr("src",$(this).find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $(this).find("img").css("margin-right", "56px");
+
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm1.png" , "_btm3.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm2.png" , "_btm3.png"));
+                    return true;
+                });
+
+
+
+                $('#fixAnchor #up a').click(function() {
+                   // $('html,body').stop().animate({scrollTop: 0}, 800, 'easeInOutCubic');
+                   // return false;
+                });
+
+                $(win).load(function() {
+                    $('#topContent .separator').waypoint(function(event, direction) {
+                        if (direction === 'down') {
+                            var index = $(this).index() + 1;
+                            $('#fixAnchor .ac a').mouseleave();
+                            $('#fixAnchor #ac'+index+' a ').mouseenter();
+                        } else {
+                            var index = $(this).index();
+                            $('#fixAnchor .ac a').mouseleave();
+                            $('#fixAnchor #ac'+index+' a ').mouseenter();
+                        }
+                    }, {
+                        offset: '10%'
+                    });
+
+                });
+
+                // df
+                var fixPosition = function() {
+                    if ( $(win).scrollTop() >= 520 - windowHeight / 2 ) {
+                        if (!fixedFlg) {
+                            $('#fixAnchor').addClass('js_fixed');
+                            fixedFlg = true;
+                        }
+                    } else {
+                        if (fixedFlg) {
+                            $('#fixAnchor').removeClass('js_fixed');
+                            fixedFlg = false;
+                        }
+                    }
+                }
+
+                $(win).scroll(fixPosition);
+                $(win).resize(function() {
+                    windowHeight = $(win).height();
+                });
+            }
+        }).init();
+
         $(window).scroll(function() {
             var elem1 = $("#bg1");
             var elem2 = $("#bg2");
             var elem3 = $("#bg3");
             var elem4 = $("#bg4");
-            if ($(window).scrollTop() >= elem.outerHeight()) {
-                img2.style.visibility = "hidden"
+            var index = 1;
+            if ($(window).scrollTop() < elem1.outerHeight()) {
+                index = 1;
             }
+            if ($(window).scrollTop() >= elem1.outerHeight()) {
+                index = 2;
+            }
+            if ($(window).scrollTop() >= elem1.outerHeight() + elem2.outerHeight()) {
+                index = 3;
+            }
+            if ($(window).scrollTop() >= elem1.outerHeight() + elem2.outerHeight() + elem3.outerHeight()) {
+                index = 4;
+            }
+
+            $("#ac1").find("img").attr("src",$("#ac1").find("img").attr("src").replace("_on.png" , "_off.png"));
+            $("#ac2").find("img").attr("src",$("#ac2").find("img").attr("src").replace("_on.png" , "_off.png"));
+            $("#ac3").find("img").attr("src",$("#ac3").find("img").attr("src").replace("_on.png" , "_off.png"));
+            $("#ac4").find("img").attr("src",$("#ac4").find("img").attr("src").replace("_on.png" , "_off.png"));
+            switch (index)
+            {
+                case 1:
+                    $("#ac1").find("img").attr("src",$("#ac1").find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $("#ac4").find("img").css("margin-right", "0px");
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm2.png" , "_btm1.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm3.png" , "_btm1.png"));
+                    break;
+                case 2:
+                    $("#ac2").find("img").attr("src",$("#ac2").find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $("#ac4").find("img").css("margin-right", "0px");
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm1.png" , "_btm2.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm3.png" , "_btm2.png"));
+                    break;
+                case 3:
+                    $("#ac3").find("img").attr("src",$("#ac3").find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $("#ac4").find("img").css("margin-right", "0px");
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm1.png" , "_btm3.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm2.png" , "_btm3.png"));
+                    break;
+                case 4:
+                    $("#ac4").find("img").attr("src",$("#ac4").find("img").attr("src").replace("_off.png" , "_on.png"));
+                    $("#ac4").find("img").css("margin-right", "56px");
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm1.png" , "_btm3.png"));
+                    $("#ac5").find("img").attr("src",$("#ac5").find("img").attr("src").replace("_btm2.png" , "_btm3.png"));
+                    break;
+            }
+            return true;
+
         });
+
 
     </script>
 </head>
@@ -130,15 +327,17 @@
                 <img src="images/label.gif" alt="thus">
             </div>
 
-            <div id="gnbback" style="left: 1600px; top: 100px;">
-                <a href="javascript:gnb(1);"><img src="images/navi_btn.png" alt="about"></a>
+            <!-- fixAnchor-->
+            <div id="fixAnchor" class="">
+                <ul>
+                    <li id="ac1" class="ac"><a href=""#bg1""><img src="images/nav_btn1_on.png" alt="home" class="rollover"></a></li>
+                    <li id="ac2" class="ac"><a href="#bg2""><img src="images/nav_btn2_off.png" alt="아이치즈" class="rollover"></a></li>
+                    <li id="ac3" class="ac"><a href="#bg3"><img src="images/nav_btn3_off.png" alt="대표치즈" class="rollover"></a></li>
+                    <li id="ac4" class="ac"><a href="#bg4""><img src="images/nav_btn4_off.png" alt="간식치즈" class="rollover" hspace="0"></a></li>
+                    <li id="ac5" class="ac"><img src="images/nav_btm1.png" alt="피자치즈" class="rollover" ></a></li>
+                </ul>
             </div>
-            <div id="gnb" style=" left: 1600px;">
-                    <a href="javascript:gnb(1);"><img  id="img1" src="images/frog1.png" alt="about"></a><p></p>
-                    <a href="javascript:gnb(2);"><img  id="img2" src="images/frog2.png" alt="work"></a><p></p>
-                    <a href="javascript:gnb(3);"><img  id="img3" src="images/frog3.png" alt="contact"></a><p></p>
-                    <a href="javascript:gnb(4);"><img  id="img4" src="images/frog4.png" alt="contact"></a><p></p>
-            </div>
+            <!-- // fixAnchor-->
 
             </div>
     </div>
@@ -156,14 +355,14 @@
             <div id="bottombtn1" style="left: -164px; top: 934px;">
                 <table style="width:100%">
                     <tr>
-                        <td>Jill</td>
+                        <td></td>
                         <td><a href="javascript:gnb(1);"><img  id="img7" src="images/sche_btn.png" alt="about"></a></td>
-                        <td>50</td>
+                        <td></td>
                     </tr>
                     <tr>
-                        <td>Eve</td>
-                        <td>Jackson</td>
-                        <td>94</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </table>
 
