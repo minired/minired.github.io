@@ -37,9 +37,26 @@
         #gnb {position: fixed; z-index: 1000; left: -1000px; top:20px;}
         #gnbback {position: fixed; z-index: 500; left: -1000px; top:20px;}
         #gnb li {margin-bottom: 10px;}
-
         #bottombtn1 {position: relative; z-index: 1000; left: 0px; top:0px;}
-        #bottombtn2 {position: relative; z-index: 1000; left: 0px; top:0px;}
+        #bottombtn2 {position: absolute; z-index: 1000; left: 660px; top:0px;}
+
+
+        /* 03 메인 아이콘 */
+        #bg4. iconArea {margin-top:148px; }
+        #bg4. iconArea a {display:inline-block; width:154px; height:151px; font-size:0; line-height:0; margin:0 5px; }
+
+        #bg4. popArea {
+            margin-top:360px;
+            width:900px;
+            margin-left: auto;
+            margin-right: auto;
+            position:relative;
+        }
+        #bg4. popArea a {display:inline-block; width:154px; height:151px; font-size:0; line-height:0; margin:0 5px; }
+
+        #bg4 .secCon01 {padding-top:584px;}
+        table.fixed { table-layout:fixed;  }
+        table.fixed td { overflow: hidden; }
 
         #fixAnchor li a{}
         #ac0, #ac0 a{display:block;}
@@ -49,7 +66,7 @@
             padding-left:0px;
         }
         /* quick */
-        #fixAnchor { position: absolute; top: 50%; right: 20px; margin: -43px 0 0 0; z-index:100; _display:none;}
+        #fixAnchor { position: absolute; top: 50%; right: 0px; margin: -43px 0 0 0; z-index:100; _display:none;}
         #fixAnchor.js_fixed { position: fixed; top: 40%; margin: -193px 0 0 0; z-index:100;}
         #fixAnchor.js_fixed2 {position:fixed; top: 40%; margin: -193px 0 0 0; z-index:100;}
 
@@ -98,8 +115,21 @@
         $(function(){
             $(".contInner2").width(1900)
             $(".contInner2").height(1129)//height($(window).height());
+
+
+            $(".popArea").width(1023)
+            $(".popArea").height(360)//height($(window).height());
+            var el=$(".popArea");//style.set($(window).width() - 1470);
+            var offset = 640 - ((2258 - $(window).width()) * 0.52);
+            el.css('margin-left', offset+'px');
             $.aniOk=0;
             $(window).scrollTop(0);
+        });
+
+        $(window).resize(function(){
+            var offset = 640 - ((2258 - $(window).width()) * 0.52);
+            var el=$(".popArea");//style.set($(window).width() - 1470);
+            el.css('margin-left', offset+'px');
         });
 
 
@@ -112,19 +142,18 @@
             switch (n)
             {
                 case 1:
-                    img1.style.visibility = "hidden"
-                    location.href="#bg1";
+                    popimg.src = "images/pop_pop1.png";
+                    popimg.style.visibility = "visible";
                     break;
                 case 2:
-                    img2.style.visibility = "hidden"
-                    location.href="#bg2";
+                    popimg.src = "images/pop_pop2.png";
+                    popimg.style.visibility = "visible";
                     break;
                 case 3:
-                    img3.style.visibility = "hidden"
-                    location.href="#bg3";
+                    popimg.style.visibility = "hidden";
                     break;
                 case 4:
-                    img4.style.visibility = "hidden"
+                    img4.style.visibility = "hidden";
                     location.href="#bg4";
                     break;
             }
@@ -147,6 +176,7 @@
                 $(function() {
                     $("#ac5").find("img").css("margin-top", "-20px");
                     self.fixAnchor();
+                    popimg.style.visibility = "hidden"
                 });
             },
 
@@ -353,23 +383,20 @@
         </div>
     </div>
     <div class="bgimg4" , id = "bg4" >
-        <div class="contInner2" >
-            <div id="bottombtn1" style="left: -164px; top: 934px;">
-                <table style="width:100%">
-                    <tr>
-                        <td></td>
-                        <td><a href="javascript:gnb(1);"><img  id="img7" src="images/sche_btn.png" alt="about"></a></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-
+        <div class="contInner2">
+            <div class = "secCon01"></div>
+            <div class = "popArea"><a href="javascript:gnb(3);"><img src = "images/pop_pop1.png" id = "popimg"></a>
             </div>
+            <div class="iconArea" style= "position: absolute; left: 34%;" >
+                <a href="javascript:gnb(1);"><img src="images/sche_btn.png" style ="margin-right: 42px" ></a>
+                <a href="javascript:gnb(2);"><img src="images/loc_btn.png" style ="margin-left: 43px"></a>
+            </div>
+
+
+
         </div>
+
+
     </div>
 
 </body>
