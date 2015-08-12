@@ -123,6 +123,12 @@
             var el=$(".popArea");//style.set($(window).width() - 1470);
             var offset = 640 - ((2258 - $(window).width()) * 0.52);
             el.css('margin-left', offset+'px');
+
+
+            var el2=$(".iconArea");
+            var offset2 = 840 - ((2258 - $(window).width()) * 0.52);
+            el2.css('margin-left', offset2+'px');
+
             $.aniOk=0;
             $(window).scrollTop(0);
         });
@@ -131,6 +137,11 @@
             var offset = 640 - ((2258 - $(window).width()) * 0.52);
             var el=$(".popArea");//style.set($(window).width() - 1470);
             el.css('margin-left', offset+'px');
+
+
+            var el2=$(".iconArea");
+            var offset2 = 840 - ((2258 - $(window).width()) * 0.52);
+            el2.css('margin-left', offset2+'px');
         });
 
 
@@ -388,7 +399,7 @@
             <div class = "secCon01"></div>
             <div class = "popArea"><a href="javascript:gnb(3);"><img src = "images/pop_pop1.png" id = "popimg"></a>
             </div>
-            <div class="iconArea" style= "position: absolute; left: 34%;" >
+            <div class="iconArea" style= "position: absolute;" >
                 <a href="javascript:gnb(1);"><img src="images/sche_btn.png" style ="margin-right: 42px" ></a>
                 <a href="javascript:gnb(2);"><img src="images/loc_btn.png" style ="margin-left: 43px"></a>
             </div>
